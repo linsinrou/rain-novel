@@ -409,3 +409,57 @@ if (resetFontButton) {
 
 /* 開啟頁面時套用設定 */
 updateNovelFontSize();
+
+
+/* =========================
+  11. 載入小說純文字
+========================= */
+
+const novelTextArea = document.getElementById("novelContent");
+
+if (novelTextArea) {
+  const textFile = novelTextArea.dataset.textFile;
+
+  if (textFile) {
+    fetch(textFile)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("小說內容載入失敗");
+        }
+
+        return response.text();
+      })
+      .then(function (novelText) {
+        novelTextArea.innerHTML = "";
+
+        /*
+          只要純文字中間空一行，
+          就會自動建立一個段落。
+        */
+        const paragraphs = novelText
+          .trim()
+          .split(/\r?\n\s*\r?\n/);
+
+        paragraphs.forEach(function (paragraphText) {
+          const paragraph = document.createElement("p");
+
+          paragraph.textContent = paragraphText.trim();
+
+          novelTextArea.appendChild(paragraph);
+        });
+      })
+      .catch(function (error) {
+        novelTextArea.innerHTML = "";
+
+        const errorMessage = document.createElement("p");
+
+        errorMessage.className = "loading-message";
+        errorMessage.textContent =
+          "小說內容暫時無法載入，請稍後再試。";
+
+        novelTextArea.appendChild(errorMessage);
+
+        console.error(error);
+      });
+  }
+}

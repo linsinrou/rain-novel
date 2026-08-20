@@ -6,8 +6,7 @@
   <!-- 讓章節在手機上正常顯示 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>第二章｜起點</title>
-
+  <title>第二章｜十年後</title>                           <!--    改     -->
   <!-- 所有章節共用同一個 CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -26,26 +25,27 @@
 
       <div class="nav-right">
         <!-- 亮色與暗色切換 -->
-        <button
-          id="themeButton"
-          class="theme-button"
-          type="button"
-          aria-label="切換亮色與暗色"
-        >
+        <button id="themeButton" class="theme-button" type="button" aria-label="切換亮色與暗色">
           <span id="themeIcon">☀</span>
           <span id="themeText">亮色</span>
         </button>
+
+        <!-- 在這裡加入字體控制 -->
+        <div class="font-size-control" aria-label="調整小說字體大小">
+          <button id="decreaseFontButton" class="font-size-button" type="button">−</button>
+          <span id="fontSizeValue" class="font-size-value">18</span>
+          <button id="increaseFontButton" class="font-size-button" type="button">＋</button>
+          <button id="resetFontButton" class="font-reset-button" type="button">預設</button>
+        </div>
       </div>
     </nav>
   </header>
 
   <main class="chapter-page">
     <div class="chapter-page-top">
-      <a href="index.html#chapterArea" class="back-button">
-        ← 返回章節目錄
-      </a>
+      <a href="index.html#chapterArea" class="back-button">← 返回章節目錄</a>
 
-      <span class="chapter-label">CHAPTER 01</span>
+      <span class="chapter-label">CHAPTER 02</span>             <!--    改     -->
     </div>
 
     <!-- 章節標題 -->
@@ -53,44 +53,29 @@
       <p>渲染色彩的雨</p>
 
       <!-- 在這裡修改章節名稱 -->
-      <h1>第二章 起點</h1>
+      <h1>第二章 十年後</h1>                            <!--    改     -->
 
       <div class="chapter-title-line"></div>
     </header>
 
-    <!--
-      小說正文放在這裡。
-
-      每一個 <p> 和 </p> 中間放一個段落。
-      要新增段落，就複製一組 <p>內容</p>。
-    -->
-    <article class="novel-content">
-      <p>
-        請把第一段小說內容放在這裡。
-      </p>
-
-      <p>
-        請把第二段小說內容放在這裡。
-      </p>
-
-      <p>
-        請把第三段小說內容放在這裡。
-      </p>
+    <!-- 小說正文放在這裡 -->
+    <article id="novelContent" class="novel-content" data-text-file="chapter-02.txt">                 <!--    改     -->
+      <p class="loading-message">小說內容載入中……</p>
     </article>
 
     <!-- 上一章與下一章 -->
     <nav class="chapter-navigation">
-    <!-- 回到第一章 -->
-    <a class="chapter-nav-link" href="chapter-01.html">
+      <!-- 第一章沒有上一章，所以先隱藏 chapter-nav-link disabled-->
+      <a class="chapter-nav-link" href="chapter-01.html">                        <!--    改     -->
         <small>PREVIOUS</small>
-        <span>← 第一章</span>
-    </a>
+        <span>← 第一章</span>                                               <!--    改     -->
+      </a>
 
-    <!-- 前往第三章 -->
-    <a class="chapter-nav-link chapter-nav-next" href="chapter-03.html">
+      <!-- 修改 href 就能連到下一章 -->
+      <a class="chapter-nav-link chapter-nav-next" href="chapter-03.html">   <!--    改     -->
         <small>NEXT</small>
-        <span>第三章 →</span>
-    </a>
+        <span>第三章 →</span>                                                 <!--    改     -->
+      </a>
     </nav>
   </main>
 
@@ -110,14 +95,7 @@
   </footer>
 
   <!-- 回到最上方 -->
-  <button
-    id="backToTopButton"
-    class="back-to-top"
-    type="button"
-    aria-label="回到最上方"
-  >
-    ↑
-  </button>
+  <button id="backToTopButton" class="back-to-top" type="button" aria-label="回到最上方">↑</button>
 
   <!-- 章節頁面也要引入 JavaScript，才能切換顏色 -->
   <script src="script.js"></script>

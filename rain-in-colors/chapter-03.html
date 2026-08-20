@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- 讓章節在手機上正常顯示 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>第三章｜暫時</title>                           <!--    改     -->
+  <!-- 所有章節共用同一個 CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 頁首 -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <span class="logo-symbol">梟</span>
+
+        <span class="logo-text">
+          <strong>渲染色彩的雨</strong>
+          <small>RAIN IN COLORS</small>
+        </span>
+      </a>
+
+      <div class="nav-right">
+        <!-- 亮色與暗色切換 -->
+        <button id="themeButton" class="theme-button" type="button" aria-label="切換亮色與暗色">
+          <span id="themeIcon">☀</span>
+          <span id="themeText">亮色</span>
+        </button>
+
+        <!-- 在這裡加入字體控制 -->
+        <div class="font-size-control" aria-label="調整小說字體大小">
+          <button id="decreaseFontButton" class="font-size-button" type="button">−</button>
+          <span id="fontSizeValue" class="font-size-value">18</span>
+          <button id="increaseFontButton" class="font-size-button" type="button">＋</button>
+          <button id="resetFontButton" class="font-reset-button" type="button">預設</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="chapter-page">
+    <div class="chapter-page-top">
+      <a href="index.html#chapterArea" class="back-button">← 返回章節目錄</a>
+
+      <span class="chapter-label">CHAPTER 03</span>             <!--    改     -->
+    </div>
+
+    <!-- 章節標題 -->
+    <header class="chapter-title">
+      <p>渲染色彩的雨</p>
+
+      <!-- 在這裡修改章節名稱 -->
+      <h1>第三章 暫時</h1>                            <!--    改     -->
+
+      <div class="chapter-title-line"></div>
+    </header>
+
+    <!-- 小說正文放在這裡 -->
+    <article id="novelContent" class="novel-content" data-text-file="">                 <!--    改     -->
+      <p class="loading-message">小說內容載入中……</p>
+    </article>
+
+    <!-- 上一章與下一章 -->
+    <nav class="chapter-navigation">
+      <!-- 第一章沒有上一章，所以先隱藏 chapter-nav-link disabled-->
+      <a class="chapter-nav-link" href="chapter-02.html">                        <!--    改     -->
+        <small>PREVIOUS</small>
+        <span>← 第二章</span>                                               <!--    改     -->
+      </a>
+
+      <!-- 修改 href 就能連到下一章 -->
+      <a class="chapter-nav-link chapter-nav-next" href="chapter-04.html">   <!--    改     -->
+        <small>NEXT</small>
+        <span>第四章 →</span>                                                 <!--    改     -->
+      </a>
+    </nav>
+  </main>
+
+  <!-- 頁尾 -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">渲染色彩的雨</a>
+
+      <p>雨會停下，而真相終將浮現。</p>
+
+      <div class="footer-line"></div>
+
+      <small>
+        © <span id="currentYear"></span> 渲染色彩的雨小說章節
+      </small>
+    </div>
+  </footer>
+
+  <!-- 回到最上方 -->
+  <button id="backToTopButton" class="back-to-top" type="button" aria-label="回到最上方">↑</button>
+
+  <!-- 章節頁面也要引入 JavaScript，才能切換顏色 -->
+  <script src="script.js"></script>
+</body>
+</html>

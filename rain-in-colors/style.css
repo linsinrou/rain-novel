@@ -1256,4 +1256,22 @@ a {
     padding: 6px;
   }
 }
+
+/* 小說段落 */
+.novel-content p {
+  margin: 0 0 1.8em;
+  white-space: pre-line;
+}
+
+/* 最後一段不需要下方空白 */
+.novel-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* 載入提示 */
+.loading-message {
+  text-align: center;
+  opacity: 0.65;
+}
+
 }
