@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- 讓網頁在手機上正常顯示 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>渲染色彩的雨｜小說章節</title>
+
+  <!-- 引入 CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 頁首 -->
+  <header class="site-header">
+    <nav class="navbar">
+      <!-- 網站標誌 -->
+      <a href="index.html" class="logo">
+        <span class="logo-symbol">梟</span>
+
+        <span class="logo-text">
+          <strong>渲染色彩的雨</strong>
+          <small>RAIN IN COLORS</small>
+        </span>
+      </a>
+
+      <div class="nav-right">
+        <!-- 電腦版導覽列 -->
+        <div class="nav-links">
+          <a href="index.html">首頁</a>
+          <a href="#storyArea">故事介紹</a>
+          <a href="#authorArea">作者介紹</a>
+          <a href="#chapterArea">章節目錄</a>
+        </div>
+
+        <!-- 亮色與暗色切換按鈕 -->
+        <button
+          id="themeButton"
+          class="theme-button"
+          type="button"
+          aria-label="切換亮色與暗色"
+        >
+          <span id="themeIcon">☀</span>
+          <span id="themeText">亮色</span>
+        </button>
+
+        <!-- 手機版選單按鈕 -->
+        <button
+          id="menuButton"
+          class="menu-button"
+          type="button"
+          aria-label="開啟選單"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 手機版選單 -->
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="index.html">首頁</a>
+      <a href="#storyArea">故事介紹</a>
+      <a href="#authorArea">作者介紹</a>
+      <a href="#chapterArea">章節目錄</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 首頁封面 -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-label">DARKNESS · TRUTH · REBIRTH</p>
+
+        <h1>
+          <span>雨落無聲</span>
+          <strong>梟行於夜</strong>
+        </h1>
+
+        <p class="hero-description">
+          她在黑暗裡醒來，在謊言中尋找真相。
+        </p>
+
+        <a href="#chapterArea" class="hero-button">
+          <span>開始閱讀</span>
+          <span>↓</span>
+        </a>
+      </div>
+
+      <!-- 右邊重新設計的圖示 -->
+      <div class="hero-mark" aria-hidden="true">
+        <div class="mark-frame">
+          <!-- 月亮 -->
+          <span class="mark-moon"></span>
+
+          <!-- 梟的眼睛 -->
+          <div class="mark-eyes">
+            <span class="mark-eye"></span>
+            <span class="mark-eye"></span>
+          </div>
+
+          <!-- 梟的嘴 -->
+          <span class="mark-beak"></span>
+
+          <!-- 雨滴 -->
+          <span class="mark-drop drop-one"></span>
+          <span class="mark-drop drop-two"></span>
+          <span class="mark-drop drop-three"></span>
+        </div>
+
+        <p>THE OWL</p>
+      </div>
+    </section>
+
+    <!-- 故事介紹 -->
+<section id="storyArea" class="introduction-section">
+  <div class="section-heading">
+    <span class="section-number">01</span>
+
+    <div>
+      <p>STORY INTRODUCTION</p>
+      <h2>故事介紹</h2>
+    </div>
+  </div>
+
+  <div class="story-introduction">
+    <div class="story-decoration">
+      <span>雨</span>
+    </div>
+
+    <div class="story-text">
+      <p>
+        白雨從小被關在百家宅邸的地下室，從未真正接觸過外面的世界。
+        一場大火改變了她的人生，她跟隨管家陳家豪進入殺手集團，
+        最終成為集團第一殺手「梟」。
+      </p>
+
+      <p>
+        管家的死亡、殺手集團的背叛，以及神祕實驗室的出現，
+        讓白雨開始追查被隱藏多年的真相。
+        當她重新回到普通人的世界，等待她的卻是更加龐大的謊言。
+      </p>
+
+      <p>
+        她必須在白雨與梟之間找到自己，也必須面對那個一直在背後操控她人生的人。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 作者介紹 -->
+<section id="authorArea" class="introduction-section author-section">
+  <div class="section-heading">
+    <span class="section-number">02</span>
+
+    <div>
+      <p>ABOUT THE AUTHOR</p>
+      <h2>作者介紹</h2>
+    </div>
+  </div>
+
+  <div class="author-introduction">
+    <!-- 作者名字的第一個字，也可以改成其他文字 -->
+    <div class="author-symbol">作</div>
+
+    <div class="author-information">
+      <!-- 在這裡填寫作者名稱 -->
+      <span>AUTHOR</span>
+      <h3>作者名稱</h3>
+
+      <!-- 在這裡填寫作者介紹 -->
+      <p>
+        請在這裡填寫作者介紹，例如創作原因、喜歡的故事類型，
+        或是想對讀者說的話。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 章節目錄 -->
+<section id="chapterArea" class="chapter-section">
+    <!-- 章節目錄 -->
+    <section id="chapterArea" class="chapter-section">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+
+        <div>
+          <p>CHAPTER DIRECTORY</p>
+          <h2>章節目錄</h2>
+        </div>
+      </div>
+
+      <!-- 搜尋和章節數量 -->
+      <div class="chapter-tools">
+        <div class="search-box">
+          <span class="search-icon"></span>
+
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="搜尋章節名稱或章節數字"
+            autocomplete="off"
+          >
+
+          <!-- 清除搜尋 -->
+          <button
+            id="clearSearchButton"
+            class="clear-search"
+            type="button"
+            aria-label="清除搜尋"
+          >
+            ×
+          </button>
+        </div>
+
+        <p class="chapter-count">
+          共 <strong id="chapterCount">0</strong> 個章節
+        </p>
+      </div>
+
+      <!-- JavaScript 會把章節放進這裡 -->
+      <div id="chapterList" class="chapter-list"></div>
+
+      <!-- 找不到章節時顯示 -->
+      <div id="emptyMessage" class="empty-message">
+        <span>梟</span>
+        <h3>沒有找到章節</h3>
+        <p>請嘗試其他章節名稱或數字。</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">渲染色彩的雨</a>
+
+      <p>雨會停下，而真相終將浮現。</p>
+
+      <div class="footer-line"></div>
+
+      <small>
+        © <span id="currentYear"></span> 渲染色彩的雨小說章節
+      </small>
+    </div>
+  </footer>
+
+  <!-- 回到最上方 -->
+  <button
+    id="backToTopButton"
+    class="back-to-top"
+    type="button"
+    aria-label="回到最上方"
+  >
+    ↑
+  </button>
+
+  <!-- 引入 JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
