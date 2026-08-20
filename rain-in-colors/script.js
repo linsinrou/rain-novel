@@ -314,3 +314,98 @@ if (currentYear) {
 */
 
 displayChapterList(chapters);
+
+
+/* =========================
+  10. 小說字體大小控制
+========================= */
+
+const novelContent = document.querySelector(".novel-content");
+
+const decreaseFontButton = document.getElementById(
+  "decreaseFontButton"
+);
+
+const increaseFontButton = document.getElementById(
+  "increaseFontButton"
+);
+
+const resetFontButton = document.getElementById(
+  "resetFontButton"
+);
+
+const fontSizeValue = document.getElementById(
+  "fontSizeValue"
+);
+
+/* 字體限制與預設值 */
+const defaultFontSize = 18;
+const minimumFontSize = 14;
+const maximumFontSize = 30;
+
+/* 讀取讀者之前選擇的大小 */
+let currentFontSize = Number(
+  localStorage.getItem("novelFontSize")
+) || defaultFontSize;
+
+/* 避免儲存的數字超出範圍 */
+currentFontSize = Math.min(
+  maximumFontSize,
+  Math.max(minimumFontSize, currentFontSize)
+);
+
+/* 套用字體大小 */
+function updateNovelFontSize() {
+  if (!novelContent || !fontSizeValue) {
+    return;
+  }
+
+  novelContent.style.fontSize = `${currentFontSize}px`;
+  fontSizeValue.textContent = currentFontSize;
+
+  localStorage.setItem(
+    "novelFontSize",
+    currentFontSize
+  );
+
+  if (decreaseFontButton) {
+    decreaseFontButton.disabled =
+      currentFontSize <= minimumFontSize;
+  }
+
+  if (increaseFontButton) {
+    increaseFontButton.disabled =
+      currentFontSize >= maximumFontSize;
+  }
+}
+
+/* 縮小，每次減 1px */
+if (decreaseFontButton) {
+  decreaseFontButton.addEventListener("click", function () {
+    if (currentFontSize > minimumFontSize) {
+      currentFontSize -= 1;
+      updateNovelFontSize();
+    }
+  });
+}
+
+/* 放大，每次加 1px */
+if (increaseFontButton) {
+  increaseFontButton.addEventListener("click", function () {
+    if (currentFontSize < maximumFontSize) {
+      currentFontSize += 1;
+      updateNovelFontSize();
+    }
+  });
+}
+
+/* 回到預設大小 */
+if (resetFontButton) {
+  resetFontButton.addEventListener("click", function () {
+    currentFontSize = defaultFontSize;
+    updateNovelFontSize();
+  });
+}
+
+/* 開啟頁面時套用設定 */
+updateNovelFontSize();

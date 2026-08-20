@@ -1171,4 +1171,89 @@ a {
     font-size: 35px;
   }
 }
+
+/* 字體大小控制 */
+.font-size-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+.font-size-button,
+.font-reset-button {
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.font-size-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.font-size-button:hover,
+.font-reset-button:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.font-size-value {
+  min-width: 28px;
+  text-align: center;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-reset-button {
+  padding: 7px 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+}
+
+/* 小說正文預設字體 */
+.novel-content {
+  font-size: 18px;
+}
+
+/* 亮色模式 */
+.light-theme .font-size-control {
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+.light-theme .font-size-button:hover,
+.light-theme .font-reset-button:hover {
+  color: #111111;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* 手機版 */
+@media (max-width: 600px) {
+  .nav-right {
+    gap: 8px;
+  }
+
+  .font-size-control {
+    gap: 2px;
+  }
+
+  .font-size-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .font-reset-button {
+    padding: 6px;
+  }
+}
 }
