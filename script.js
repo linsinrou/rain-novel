@@ -7,14 +7,14 @@ const books = [
     url: "rain-in-colors/index.html",
     status: "連載中"
   },
-  {
+  /*{
     title: "第二本小說",
     author: "作者名稱",
     description: "第二本小說的故事簡介。",
     cover: "second-novel/cover.jpg",
     url: "second-novel/index.html",
     status: "連載中"
-  }
+  }*/
 
   /*
   新增小說時，複製下面這一段：
